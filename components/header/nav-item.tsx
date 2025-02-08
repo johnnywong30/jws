@@ -20,7 +20,7 @@ const NavItem: React.FC<NavItemType> = ({ href, active, label }) => {
     <NavigationMenuItem>
       <Link href={href} legacyBehavior passHref>
         <NavigationMenuLink
-          className={cn(navigationMenuTriggerStyle())}
+          className={cn(navigationMenuTriggerStyle(), "text-lg")}
           active={active}
         >
           {label}

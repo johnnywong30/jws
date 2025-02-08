@@ -33,6 +33,11 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --non-photo-blue: 187 54% 70% 1;
+    --lapis-lazuli: 210 50% 40% 1;
+    --melon: 5 73 78% 1;
+    --russian-violet: 242 72% 14% 1;
+    --rich-black: 204 28% 7% 1;
   }
   .dark {
     --background: 222.2 84% 4.9%;

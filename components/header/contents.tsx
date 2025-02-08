@@ -17,7 +17,7 @@ const HeaderContent = () => {
   const pathname = usePathname();
   return (
     <NavigationMenu>
-      <NavigationMenuList>
+      <NavigationMenuList className="sm:gap-2">
         <NavItem active={pathname === "/"} href="/" label="About" />
         <NavItem
           active={pathname === "/experiences"}
