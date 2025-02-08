@@ -40,6 +40,7 @@ export default function RootLayout({
         >
           <SidebarProvider className="flex flex-col gap-1 justify-between">
             <Header />
+
             {children}
             <Footer />
           </SidebarProvider>

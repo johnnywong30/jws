@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="flex flex-row py-4 px-4 gap-4 sm:px-8 w-screen">
+    <header className="flex flex-row py-4 px-4 gap-4 sm:px-8 w-screen sticky top-0 z-50 sm:bg-inherit sm:dark:bg-inherit bg-blue-50 dark:bg-slate-950">
       <div className="hidden sm:flex justify-end w-full items-center gap-4">
         <DesktopContent />
         <ThemeToggle />
