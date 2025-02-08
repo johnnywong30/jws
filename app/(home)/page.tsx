@@ -1,20 +1,17 @@
 import { Separator } from "@/components/ui/separator";
+import AboutData from "@/constants/about";
 
 const Intro = () => {
-  const name = "Johnny Wong";
-  const role = "Software Engineer";
-  const description =
-    "I engineer systems from 0 to 1 to drive impactful societal change.";
   return (
     <section className="flex flex-col gap-2 sm:px-12">
       <h1 className="text-4xl sm:text-5xl font-extrabold text-pretty text-center sm:text-left">
-        {name}
+        {AboutData.introData.name}
       </h1>
       <h2 className="text-xl sm:text-2xl font-normal text-pretty text-center sm:text-left">
-        {role}
+        {AboutData.introData.role}
       </h2>
       <p className="text-base text-pretty text-center sm:text-left max-w-72 px-2 sm:px-0">
-        {description}
+        {AboutData.introData.description}
       </p>
       <Separator className="sm:hidden my-2" orientation="horizontal" />
     </section>
@@ -22,19 +19,6 @@ const Intro = () => {
 };
 
 const About = () => {
-  const currentRole: {
-    name: string;
-    url: string;
-    role: string;
-    description: string;
-  } = {
-    name: "Xonar",
-    url: "https://www.xonar.com/",
-    role: "Full Stack Software Engineer",
-    description:
-      "I am responsible for the development of UI components, backend services, CI/CD pipelines, and deployment infrastructure of web and mobile applications.",
-  };
-
   return (
     <section className="flex flex-col gap-3 px-4 sm:px-12 max-w-xl text-pretty font-light">
       <p>
@@ -45,16 +29,16 @@ const About = () => {
       </p>
       <p>
         Currently, I'm a{" "}
-        <span className="font-semibold">{currentRole.role}</span> at{" "}
+        <span className="font-semibold">{AboutData.companyData.role}</span> at{" "}
         <a
           className="font-semibold text-pink-600"
-          href={currentRole.url}
+          href={AboutData.companyData.url}
           target="_blank"
           rel="noopener noreferrer"
         >
-          {currentRole.name}
+          {AboutData.companyData.name}
         </a>
-        , where {currentRole.description}
+        , where {AboutData.companyData.description}
       </p>
       <p>
         I primarily have experience in start-up environments, where I am tasked
