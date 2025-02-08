@@ -2,36 +2,105 @@
 
 import {
   NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
 import NavItem from "@/components/header/nav-item";
-
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarTrigger,
+  SidebarFooter,
+  SidebarHeader,
+} from "@/components/ui/sidebar";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 import React from "react";
 
-const HeaderContent = () => {
+type NavLink = {
+  href: string;
+  label: string;
+};
+
+const items: NavLink[] = [
+  {
+    href: "/",
+    label: "About",
+  },
+  {
+    href: "/experiences",
+    label: "Experience",
+  },
+  {
+    href: "/projects",
+    label: "Projects",
+  },
+];
+
+export const DesktopContent = () => {
   const pathname = usePathname();
   return (
-    <NavigationMenu>
-      <NavigationMenuList className="sm:gap-2">
-        <NavItem active={pathname === "/"} href="/" label="About" />
-        <NavItem
-          active={pathname === "/experiences"}
-          href="/experiences"
-          label="Experience"
-        />
-        <NavItem
-          active={pathname === "/projects"}
-          href="/projects"
-          label="Projects"
-        />
-      </NavigationMenuList>
-    </NavigationMenu>
+    <>
+      <NavigationMenu>
+        <NavigationMenuList className="sm:gap-2">
+          {items.map((item, i) => (
+            <NavItem
+              key={`side-nav${item.label}`}
+              active={pathname === item.href}
+              href={item.href}
+              label={item.label}
+            />
+          ))}
+        </NavigationMenuList>
+      </NavigationMenu>
+    </>
   );
 };
 
-export default HeaderContent;
+export const MobileContent = () => {
+  const pathname = usePathname();
+  return (
+    <>
+      <Sidebar aria-describedby="side-nav-bar">
+        <SidebarHeader className="flex py-4">
+          <SidebarTrigger />
+        </SidebarHeader>
+
+        <SidebarContent>
+          <SidebarGroup>
+            <SidebarGroupContent>
+              <SidebarMenu>
+                {items.map((item) => (
+                  <SidebarMenuItem key={`side-nav${item.label}`}>
+                    <SidebarMenuButton
+                      asChild
+                      isActive={pathname === item.href}
+                    >
+                      <Link href={item.href}>
+                        <span
+                          className={cn(
+                            pathname === item.href ? "text-blue-500" : ""
+                          )}
+                        >
+                          {item.label}
+                        </span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                ))}
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
+        </SidebarContent>
+        <SidebarFooter />
+      </Sidebar>
+
+      <SidebarTrigger />
+    </>
+  );
+};

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/footer";
+import { SidebarProvider } from "@/components/ui/sidebar";
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -37,9 +38,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          {children}
-          <Footer />
+          <SidebarProvider className="flex flex-col gap-1 justify-between">
+            <Header />
+            {children}
+            <Footer />
+          </SidebarProvider>
         </ThemeProvider>
       </body>
     </html>
