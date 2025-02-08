@@ -13,7 +13,7 @@ const Intro = () => {
       <h2 className="text-xl sm:text-2xl font-normal text-pretty text-center sm:text-left">
         {role}
       </h2>
-      <p className="text-base text-pretty text-center sm:text-left max-w-72">
+      <p className="text-base text-pretty text-center sm:text-left max-w-72 px-2 sm:px-0">
         {description}
       </p>
       <Separator className="sm:hidden my-2" orientation="horizontal" />
