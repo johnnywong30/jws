@@ -1,6 +1,7 @@
 import { Separator } from "@/components/ui/separator";
 import { Tag } from "@/components/ui/tag";
 import AboutData from "@/constants/about";
+import Link from "next/link";
 
 const Intro = () => {
   return (
@@ -31,14 +32,14 @@ const About = () => {
       <p>
         Currently, I'm a{" "}
         <span className="font-semibold">{AboutData.companyData.role}</span> at{" "}
-        <a
+        <Link
           className="font-semibold text-pink-600"
           href={AboutData.companyData.url}
           target="_blank"
           rel="noopener noreferrer"
         >
           {AboutData.companyData.name}
-        </a>
+        </Link>
         , where {AboutData.companyData.description}
       </p>
       <p>
