@@ -27,7 +27,7 @@ const companyData: CompanyData = {
   url: "https://www.xonar.com/",
   role: "Full Stack Software Engineer",
   description:
-    "I am responsible for the development of UI components, backend services, CI/CD pipelines, and deployment infrastructure of web and mobile applications.",
+    "I am responsible for the development of UI components, backend services, CI/CD pipelines, and deployment infrastructure for web and mobile applications.",
 };
 
 const languages: Skill[] = [
@@ -51,11 +51,14 @@ const technologies: Skill[] = [
   { name: "RabbitMQ" },
   { name: "Celery" },
   { name: "MQTT" },
+  { name: "IoT" },
   { name: "Next.js" },
   { name: "Node.js" },
   { name: "Express.js" },
   { name: "GraphQL" },
   { name: "Apollo" },
+  { name: "Vercel" },
+  { name: "Heroku" },
 ];
 
 const databases: Skill[] = [
