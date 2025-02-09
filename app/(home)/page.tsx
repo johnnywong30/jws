@@ -44,9 +44,9 @@ const About = () => {
       <p>
         I primarily have experience in start-up environments, where I have
         developed systems and applications from the ground up. I always seek to
-        learn new technologies and have helped speed up the development process
-        for both teammates and myself in several of the start-ups I've worked
-        at.
+        learn new technologies and have consistently sped up the development
+        process for both teammates and myself in several of the start-ups I've
+        worked at.
       </p>
       <p>
         In my spare time, I enjoy going to the gym, taking a walk on the pier or
