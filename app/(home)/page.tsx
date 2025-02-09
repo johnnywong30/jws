@@ -60,7 +60,7 @@ const TechnicalSkills = () => {
   return (
     <>
       <Separator className="my-2 lg:hidden" orientation="horizontal" />
-      <section className="flex flex-col lg:col-span-2 sm:px-12 gap-3 md:gap-6 md:pb-6">
+      <section className="flex flex-col lg:col-span-2 sm:px-12 gap-3 md:gap-6 md:pb-6 max-h-[30rem] sm:max-h-none overflow-y-auto">
         <h3 className="text-3xl sm:text-4xl font-extrabold text-pretty px-4 sm:px-0 col-span-2 w-full my-2 lg:my-4">
           Technical Skills
         </h3>
