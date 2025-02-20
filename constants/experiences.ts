@@ -24,6 +24,7 @@ const xnr: Experience = {
   ],
   technologies: [
     "React",
+    "React Native",
     "Next.js",
     "TailwindCSS",
     "Vercel",
@@ -69,6 +70,7 @@ const cx: Experience = {
     "Python",
     "FastAPI",
     "AWS",
+    "Azure",
     "Docker",
     "Redis",
     "Celery",

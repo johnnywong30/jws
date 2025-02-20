@@ -40,6 +40,10 @@ const items: NavLink[] = [
     href: "/projects",
     label: "Projects",
   },
+  {
+    href: "/contact",
+    label: "Contact",
+  },
 ];
 
 export const DesktopContent = () => {

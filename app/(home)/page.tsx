@@ -2,6 +2,7 @@ import { Separator } from "@/components/ui/separator";
 import { Tag } from "@/components/ui/tag";
 import AboutData from "@/constants/about";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const Intro = () => {
   return (
@@ -15,6 +16,13 @@ const Intro = () => {
       <p className="text-base text-pretty text-center sm:text-left max-w-72 px-2 sm:px-0">
         {AboutData.introData.description}
       </p>
+      <Button
+        asChild
+        variant={"outline"}
+        className="w-1/2 font-semibold mx-auto sm:mx-0"
+      >
+        <Link href="/contact">Get in Touch</Link>
+      </Button>
       <Separator className="lg:hidden my-2" orientation="horizontal" />
     </section>
   );

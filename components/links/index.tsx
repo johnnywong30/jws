@@ -30,7 +30,7 @@ const LinkGroup = (props: React.HTMLAttributes<HTMLDivElement>) => {
       >
         <Github className="size-5" />
       </Link>
-      <Link href={LinkData.EMAIL} className="cursor-pointer">
+      <Link href="/contact" className="cursor-pointer">
         <Mail className="size-5" />
       </Link>
     </div>
