@@ -1,0 +1,137 @@
+import { Experience } from "@/typing/experiences";
+
+const xnr: Experience = {
+  id: 4,
+  title: "Full Stack Software Engineer",
+  company: "Xonar Technology Inc.",
+  bullets: [
+    "Lorem ipsum odor amet, consectetuer adipiscing elit.",
+    "Urna dapibus fames etiam hendrerit finibus?",
+    "Parturient class fusce curabitur porta cubilia inceptos diam.",
+    "Ullamcorper id tristique ante bibendum iaculis iaculis rhoncus suscipit mattis.",
+    "Netus condimentum congue, suscipit massa sagittis hendrerit.",
+    "Donec senectus nisi interdum scelerisque cras risus.",
+  ],
+  startDate: 1701061200000,
+  companyLink: "https://www.xonar.com/",
+  deleted: false,
+  salary: 5,
+  benefits: [
+    "Medical Insurance",
+    "Vision Insurance",
+    "Dental Insurance",
+    "18 PTO days (accrued 1.5 days/month; to be used for sick days as well.)",
+  ],
+  technologies: [
+    "React",
+    "Next.js",
+    "TailwindCSS",
+    "Vercel",
+    "GraphQL",
+    "Apollo",
+    "Python",
+    "FastAPI",
+    "MongoDB",
+    "AWS",
+    "Docker",
+    "MQTT",
+    "IoT",
+    "Websockets",
+    "Socket.io",
+  ],
+  locationType: "on-site",
+};
+
+const cx: Experience = {
+  id: 3,
+  title: "Automation Engineer",
+  company: "Code-X",
+  bullets: [
+    "Lorem ipsum odor amet, consectetuer adipiscing elit.",
+    "Urna dapibus fames etiam hendrerit finibus?",
+    "Parturient class fusce curabitur porta cubilia inceptos diam.",
+    "Ullamcorper id tristique ante bibendum iaculis iaculis rhoncus suscipit mattis.",
+    "Netus condimentum congue, suscipit massa sagittis hendrerit.",
+    "Donec senectus nisi interdum scelerisque cras risus.",
+  ],
+  startDate: 1686801600000,
+  endDate: 1698811200000,
+  companyLink: "https://teamcode-x.com/",
+  deleted: false,
+  salary: 5,
+  benefits: [
+    "Fully Paid Medical Insurance",
+    "Fully Paid Vision Insurance",
+    "Fully Paid Dental Insurance",
+    "Unlimited PTO",
+  ],
+  technologies: [
+    "Python",
+    "FastAPI",
+    "AWS",
+    "Docker",
+    "Redis",
+    "Celery",
+    "RabbitMQ",
+    "MongoDB",
+  ],
+  locationType: "on-site",
+};
+
+const ubs: Experience = {
+  id: 2,
+  title: "Software Engineer Intern",
+  company: "UBS",
+  bullets: [
+    "Lorem ipsum odor amet, consectetuer adipiscing elit.",
+    "Urna dapibus fames etiam hendrerit finibus?",
+    "Parturient class fusce curabitur porta cubilia inceptos diam.",
+    "Ullamcorper id tristique ante bibendum iaculis iaculis rhoncus suscipit mattis.",
+    "Netus condimentum congue, suscipit massa sagittis hendrerit.",
+    "Donec senectus nisi interdum scelerisque cras risus.",
+  ],
+  startDate: 1654056000000,
+  endDate: 1660536000000,
+  companyLink: "https://www.ubs.com/us/en.html",
+  deleted: false,
+  salary: 5,
+  benefits: [],
+  technologies: ["Python", "Docker", "React", "Java"],
+  locationType: "hybrid",
+};
+
+const mih: Experience = {
+  id: 1,
+  title: "Software Engineer Intern",
+  company: "MakeItHappen.nyc",
+  bullets: [
+    "Lorem ipsum odor amet, consectetuer adipiscing elit.",
+    "Urna dapibus fames etiam hendrerit finibus?",
+    "Parturient class fusce curabitur porta cubilia inceptos diam.",
+    "Ullamcorper id tristique ante bibendum iaculis iaculis rhoncus suscipit mattis.",
+    "Netus condimentum congue, suscipit massa sagittis hendrerit.",
+    "Donec senectus nisi interdum scelerisque cras risus.",
+  ],
+  startDate: 1621051200000,
+  endDate: 1629000000000,
+  companyLink: "https://makeithappen.nyc/",
+  deleted: false,
+  salary: 5,
+  benefits: [],
+  technologies: [
+    "React",
+    "Redux",
+    "Node.js",
+    "Express.js",
+    "AWS",
+    "Lambda",
+    "DynamoDB",
+    "MySQL",
+    "PostgreSQL",
+  ],
+  locationType: "remote",
+};
+
+const experienceData: Experience[] = [xnr, cx, ubs, mih];
+
+export default experienceData;

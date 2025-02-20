@@ -14,5 +14,3 @@ function Tag({ className, ...props }: React.HTMLAttributes<HTMLSpanElement>) {
 }
 
 export { Tag };
-
-// text-slate-700 bg-green-50 ring-green-600/10 dark:text-green-300 dark:bg-green-500/50

@@ -1,3 +1,5 @@
+export type LocationType = "remote" | "hybrid" | "on-site";
+
 export type Experience = {
   id: number;
   title: string;
@@ -5,9 +7,10 @@ export type Experience = {
   bullets: string[];
   startDate: number;
   endDate?: number;
-  companyLink?: string;
+  companyLink: string;
   deleted: boolean;
-  salary: number;
+  salary?: number;
   benefits: string[];
   technologies: string[];
+  locationType: LocationType;
 };

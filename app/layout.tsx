@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen min-w-screen gap-2`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col gap-2 scrollbar-none`}
       >
         <ThemeProvider
           attribute="class"
@@ -40,7 +40,6 @@ export default function RootLayout({
         >
           <SidebarProvider className="flex flex-col gap-1 justify-between">
             <Header />
-
             {children}
             <Footer />
           </SidebarProvider>
