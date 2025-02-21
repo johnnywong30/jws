@@ -5,6 +5,9 @@ export type Project = {
   bullets: string[];
   repositoryUrl: string;
   liveUrl?: string;
+  startDate: number;
+  endDate?: number;
+  archived?: boolean;
   deleted: boolean;
   technologies: string[];
 };

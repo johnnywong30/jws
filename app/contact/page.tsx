@@ -29,6 +29,8 @@ export default function Contact() {
     },
   });
 
+  const fileRef = form.register("attachments");
+
   const onSubmit = async (values: z.infer<typeof contactSchema>) => {
     console.log(values);
     // TODO: contact handling
@@ -128,13 +130,32 @@ export default function Contact() {
                 <FormLabel>Message</FormLabel>
                 <FormControl>
                   <Textarea
-                    placeholder="Hello! My name is John Smith and I..."
+                    placeholder="Hello! My name is John Smith and I would like to..."
                     className="min-h-[140px] sm:min-h-[160px] shadow-md"
                     {...field}
                   />
                 </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="attachments"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Attachments</FormLabel>
+                <FormControl>
+                  <Input
+                    className="shadow-md"
+                    type="file"
+                    multiple
+                    {...fileRef}
+                    accept="application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                  />
+                </FormControl>
                 <FormDescription className="px-2">
-                  I will get back to you as soon as possible!
+                  Only PDFs and Word Documents are allowed.
                 </FormDescription>
                 <FormMessage />
               </FormItem>

@@ -9,6 +9,41 @@ export type ContactForm = {
   time: number; // epoch timestamp
 };
 
+const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB in bytes
+
+// Document Schema
+export const DOCUMENT_SCHEMA = z
+  .instanceof(FileList)
+  .refine(
+    (files) => {
+      for (let i = 0; i < files.length; i++) {
+        if (files[i].size > MAX_FILE_SIZE) {
+          return false;
+        }
+      }
+      return true;
+    },
+    { message: "File size must be 5MB or less." }
+  )
+  .refine(
+    (files) => {
+      for (let i = 0; i < files.length; i++) {
+        if (
+          ![
+            "application/pdf",
+            "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          ].includes(files[i].type)
+        ) {
+          return false;
+        }
+      }
+      return true;
+    },
+    {
+      message: "Invalid file type. Only .pdf and .docx are allowed.",
+    }
+  );
+
 export const ContactSchema = z.object({
   firstName: z
     .string()
@@ -21,4 +56,5 @@ export const ContactSchema = z.object({
     .string()
     .min(5, "Message must be at least 5 characters long.")
     .trim(),
+  attachments: DOCUMENT_SCHEMA.optional(),
 });
