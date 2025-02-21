@@ -6,14 +6,16 @@ export type ContactForm = {
   emailAddress: string;
   subject: string;
   message: string;
+  attachments?: FileList;
   time: number; // epoch timestamp
 };
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB in bytes
 
 // Document Schema
-export const DOCUMENT_SCHEMA = z
-  .instanceof(FileList)
+export const DOCUMENT_SCHEMA = (
+  typeof window === "undefined" ? z.any() : z.instanceof(FileList)
+)
   .refine(
     (files) => {
       for (let i = 0; i < files.length; i++) {

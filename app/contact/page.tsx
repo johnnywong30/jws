@@ -16,6 +16,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { ContactSchema as contactSchema } from "@/typing/contact";
+import { sendEmail } from "@/services/server/contact/email";
 
 export default function Contact() {
   const form = useForm<z.infer<typeof contactSchema>>({
@@ -31,8 +32,18 @@ export default function Contact() {
 
   const fileRef = form.register("attachments");
 
+  // async function onSubmit(values: z.infer<typeof contactSchema>) {
+  //   console.log(values);
+
+  //   // mutate data
+  //   // revalidate cache
+  // }
+
   const onSubmit = async (values: z.infer<typeof contactSchema>) => {
     console.log(values);
+
+    await sendEmail(values);
+
     // TODO: contact handling
 
     // TODO: save message in database for records

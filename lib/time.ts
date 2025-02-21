@@ -32,3 +32,5 @@ export const epochToDate = (epoch: number) => {
   };
   return dateObject;
 };
+
+export const getCurrentEpoch = () => Date.now();
