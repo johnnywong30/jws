@@ -1,0 +1,7 @@
+Email API:
+    ☐ Research Email API Products
+    ☐ Add Email API Environment Configuration
+
+Contacts Sending Email:
+    ☐ Server Function to POST contact request to personal email
+    ☐ Attach file to email
