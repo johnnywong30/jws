@@ -149,7 +149,8 @@ export default function Contact() {
               </FormItem>
             )}
           />
-          <FormField
+          {/* TODO: attachments input for word docs and pdfs */}
+          {/* <FormField
             control={form.control}
             name="attachments"
             render={({ field }) => (
@@ -170,7 +171,7 @@ export default function Contact() {
                 <FormMessage />
               </FormItem>
             )}
-          />
+          /> */}
           <Button type="submit" className="w-full font-semibold">
             Send
           </Button>

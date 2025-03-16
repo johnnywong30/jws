@@ -23,7 +23,6 @@ export const sendContactEmail = async (
   };
 
   try {
-    const attachments = contactForm?.attachments ? [] : [];
     await sg.send({
       to: personalEmail,
       from: personalEmail,
@@ -41,7 +40,6 @@ export const sendContactEmail = async (
           },
         },
       ],
-      attachments,
     });
   } catch (error) {
     console.log(error);
