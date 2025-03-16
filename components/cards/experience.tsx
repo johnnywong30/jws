@@ -63,7 +63,7 @@ const ExperienceCard = (props: Props) => {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <Accordion type="single" collapsible>
+        <Accordion type="single" collapsible defaultValue="item-1">
           <AccordionItem value="item-1">
             <AccordionTrigger className="hover:no-underline font-medium">
               Experience
