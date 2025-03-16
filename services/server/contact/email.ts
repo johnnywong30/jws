@@ -13,5 +13,4 @@ export const sendEmail = async (values: z.infer<typeof ContactSchema>) => {
     attachments: values.attachments,
     time: getCurrentEpoch(),
   };
-  console.log(contactForm);
 };

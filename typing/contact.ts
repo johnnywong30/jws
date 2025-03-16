@@ -12,8 +12,7 @@ export type ContactForm = {
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB in bytes
 
-// Document Schema
-export const DOCUMENT_SCHEMA = (
+const DOCUMENT_LIST_SCHEMA = (
   typeof window === "undefined" ? z.any() : z.instanceof(FileList)
 )
   .refine(
@@ -58,5 +57,5 @@ export const ContactSchema = z.object({
     .string()
     .min(5, "Message must be at least 5 characters long.")
     .trim(),
-  attachments: DOCUMENT_SCHEMA.optional(),
+  attachments: DOCUMENT_LIST_SCHEMA.optional(),
 });
