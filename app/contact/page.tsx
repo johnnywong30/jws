@@ -17,6 +17,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { ContactSchema as contactSchema } from "@/typing/contact";
 import { sendContactEmail } from "@/services/server/contact/email";
+import { createContact } from "@/services/supabase/contacts";
 
 export default function Contact() {
   const form = useForm<z.infer<typeof contactSchema>>({
@@ -43,9 +44,15 @@ export default function Contact() {
     console.log(values);
 
     // TODO: save message in database for records
+    const contactData = {
+      firstName: values.firstName,
+      lastName: values.lastName || "",
+      emailAddress: values.emailAddress,
+    };
+    await createContact(contactData);
 
     // TODO: contact handling
-    await sendContactEmail(values);
+    // await sendContactEmail(values);
 
     // TODO: send email
   };

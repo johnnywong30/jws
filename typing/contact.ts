@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { SupabaseRow } from "@/typing/supabase";
 
 export type ContactForm = {
   firstName: string;
@@ -59,3 +60,19 @@ export const ContactSchema = z.object({
     .trim(),
   attachments: DOCUMENT_LIST_SCHEMA.optional(),
 });
+
+export type Contact = {
+  firstName: string;
+  lastName: string;
+  emailAddress: string;
+};
+
+export type ContactSchema = Contact & SupabaseRow;
+
+export type ContactRequest = {
+  contact: number;
+  subject: string;
+  message: string;
+};
+
+export type ContactRequestSchema = ContactRequest & SupabaseRow;

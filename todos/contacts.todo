@@ -5,3 +5,7 @@ Email API:
 Contacts Sending Email:
     ✔ Server Function to POST contact request to personal email @done(25-03-16 19:41)
     ☐ Attach file to email
+
+Supabase Integration:
+    ✔ Create Contacts table @done(25-03-16 20:21)
+    ☐ Save contact request to Supabase before sending email
