@@ -16,9 +16,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { ContactSchema as contactSchema } from "@/typing/contact";
-import { sendContactEmail } from "@/services/server/contact/email";
-import { connectToSupabase } from "@/lib/supabase/client";
-import { createContact } from "@/services/supabase/contacts";
+import axios from "axios";
 
 export default function Contact() {
   const form = useForm<z.infer<typeof contactSchema>>({
@@ -34,11 +32,7 @@ export default function Contact() {
 
   const fileRef = form.register("attachments");
 
-  const supabase = connectToSupabase();
-
   const onSubmit = async (values: z.infer<typeof contactSchema>) => {
-    console.log(values);
-
     // TODO: save message in database for records
     const contactData = {
       firstName: values.firstName,
@@ -46,9 +40,24 @@ export default function Contact() {
       emailAddress: values.emailAddress,
     };
 
-    await supabase.auth.signInAnonymously();
+    const response = await axios.post("/api/contacts", {
+      ...values,
+    });
 
-    await createContact(contactData);
+    console.log(response);
+
+    // const response = await fetch("/api/contact/", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify({
+    //     userId: user.id,
+    //     data: { some_field: "some_value" },
+    //   }),
+    // });
+
+    // await supabase.auth.signInAnonymously();
+
+    // await createContact(contactData);
 
     // TODO: contact handling
     // await sendContactEmail(values);

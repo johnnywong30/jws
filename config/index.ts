@@ -1,9 +1,10 @@
 import { SendGridConfig } from "@/config/sendgrid";
-import { SupabaseConfig } from "@/config/supabase";
+import { SupabaseConfig, SupabaseServerConfig } from "@/config/supabase";
 
 const Config = {
   sendGridConfig: SendGridConfig,
   supabaseConfig: SupabaseConfig,
+  supabaseServerConfig: SupabaseServerConfig,
 };
 
 export default Config;
