@@ -4,6 +4,6 @@ type SupabaseConfigType = {
 };
 
 export const SupabaseConfig: SupabaseConfigType = {
-  url: process.env.SUPABASE_URL || "",
-  anonKey: process.env.SUPABASE_ANON_KEY || "",
+  url: process.env.NEXT_PUBLIC_SUPABASE_URL || "",
+  anonKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "",
 };

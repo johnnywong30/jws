@@ -17,6 +17,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { ContactSchema as contactSchema } from "@/typing/contact";
 import { sendContactEmail } from "@/services/server/contact/email";
+import { connectToSupabase } from "@/lib/supabase/client";
 import { createContact } from "@/services/supabase/contacts";
 
 export default function Contact() {
@@ -33,12 +34,7 @@ export default function Contact() {
 
   const fileRef = form.register("attachments");
 
-  // async function onSubmit(values: z.infer<typeof contactSchema>) {
-  //   console.log(values);
-
-  //   // mutate data
-  //   // revalidate cache
-  // }
+  const supabase = connectToSupabase();
 
   const onSubmit = async (values: z.infer<typeof contactSchema>) => {
     console.log(values);
@@ -49,6 +45,9 @@ export default function Contact() {
       lastName: values.lastName || "",
       emailAddress: values.emailAddress,
     };
+
+    await supabase.auth.signInAnonymously();
+
     await createContact(contactData);
 
     // TODO: contact handling
