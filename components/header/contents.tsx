@@ -36,10 +36,10 @@ const items: NavLink[] = [
     href: "/experiences",
     label: "Experience",
   },
-  {
-    href: "/projects",
-    label: "Projects",
-  },
+  // {
+  //   href: "/projects",
+  //   label: "Projects",
+  // },
   {
     href: "/contact",
     label: "Contact",
