@@ -4,7 +4,7 @@ import ThemeToggle from "@/components/theme/toggle";
 
 const Header = () => {
   return (
-    <header className="flex flex-row py-2 px-4 gap-4 sm:px-8 w-screen sticky top-0 z-50 bg-white dark:bg-slate-950 scrollbar-none">
+    <header className="flex flex-row py-2 px-4 gap-4 sm:px-8 w-screen sticky top-0 z-50 bg-background scrollbar-none">
       <div className="hidden sm:flex flex-row w-full items-center gap-4 justify-end">
         <DesktopContent />
         <ThemeToggle />
