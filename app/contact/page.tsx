@@ -17,8 +17,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { ContactSchema as contactSchema } from "@/typing/contact";
 import axios from "axios";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
+  const { toast } = useToast();
   const form = useForm<z.infer<typeof contactSchema>>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -30,39 +32,18 @@ export default function Contact() {
     },
   });
 
-  const fileRef = form.register("attachments");
+  // const fileRef = form.register("attachments");
 
   const onSubmit = async (values: z.infer<typeof contactSchema>) => {
-    // TODO: save message in database for records
-    const contactData = {
-      firstName: values.firstName,
-      lastName: values.lastName || "",
-      emailAddress: values.emailAddress,
-    };
-
-    const response = await axios.post("/api/contacts", {
+    await axios.post("/api/contacts", {
       ...values,
     });
 
-    console.log(response);
-
-    // const response = await fetch("/api/contact/", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify({
-    //     userId: user.id,
-    //     data: { some_field: "some_value" },
-    //   }),
-    // });
-
-    // await supabase.auth.signInAnonymously();
-
-    // await createContact(contactData);
-
-    // TODO: contact handling
-    // await sendContactEmail(values);
-
-    // TODO: send email
+    toast({
+      title: "Message Sent!",
+      description: "I will respond to your message as soon as possible.",
+    });
+    form.reset();
   };
 
   return (

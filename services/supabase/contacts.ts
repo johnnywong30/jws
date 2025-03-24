@@ -29,5 +29,3 @@ export const createContact = async (
   }
   return contactData;
 };
-
-// export const getContact = async

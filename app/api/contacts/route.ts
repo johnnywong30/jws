@@ -3,6 +3,10 @@ import { NextRequest, NextResponse } from "next/server";
 import { ContactSchema as contactSchema, Contact } from "@/typing/contact";
 import { sendContactEmail } from "@/services/server/contact/email";
 import { getContact, createContact } from "@/services/supabase/contacts";
+import {
+  createContactRequest,
+  CreateContactRequest,
+} from "@/services/supabase/contactRequests";
 import { z } from "zod";
 
 const supabase = createClient(
@@ -12,8 +16,7 @@ const supabase = createClient(
 );
 
 export async function POST(req: NextRequest) {
-  const body = await req.json();
-  const data: z.infer<typeof contactSchema> = body.data;
+  const data: z.infer<typeof contactSchema> = await req.json();
 
   const contact: Contact = {
     firstName: data.firstName,
@@ -30,12 +33,23 @@ export async function POST(req: NextRequest) {
     contactData = await createContact(supabase, contact);
   }
 
-  // TODO: create contact request
+  const contactId: number = contactData?.[0]?.id;
 
-  // res.status(200).json({ message: "POST received" });
-  return NextResponse.json({ message: "POST received" }, { status: 200 });
+  // link contactRequestto existing contact record
+  const contactRequest: CreateContactRequest = {
+    contact: contactId,
+    subject: data.subject,
+    message: data.message,
+  };
 
-  // save request to Database
+  // record contact message in supabase
+  await createContactRequest(supabase, contactRequest);
 
-  // send email
+  // send contact email to personal email through SendGrid
+  await sendContactEmail(data);
+
+  return NextResponse.json(
+    { message: "Sent contact message!" },
+    { status: 200 }
+  );
 }
