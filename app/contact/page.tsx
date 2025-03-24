@@ -18,9 +18,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { ContactSchema as contactSchema } from "@/typing/contact";
 import axios from "axios";
 import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
+import Spinner from "@/components/ui/loading-spinner";
 
 export default function Contact() {
   const { toast } = useToast();
+  const [loading, setLoading] = useState(false);
   const form = useForm<z.infer<typeof contactSchema>>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -35,6 +38,8 @@ export default function Contact() {
   // const fileRef = form.register("attachments");
 
   const onSubmit = async (values: z.infer<typeof contactSchema>) => {
+    setLoading(true);
+
     await axios.post("/api/contacts", {
       ...values,
     });
@@ -44,6 +49,8 @@ export default function Contact() {
       description: "I will respond to your message as soon as possible.",
     });
     form.reset();
+
+    setLoading(false);
   };
 
   return (
@@ -168,8 +175,12 @@ export default function Contact() {
               </FormItem>
             )}
           /> */}
-          <Button type="submit" className="w-full font-semibold">
-            Send
+          <Button
+            type="submit"
+            className="w-full font-semibold"
+            disabled={loading}
+          >
+            {loading ? <Spinner className="text-accent" /> : "Submit"}
           </Button>
         </form>
       </Form>
