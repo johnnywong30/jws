@@ -30,6 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="any" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col gap-2 scrollbar-none`}
       >
