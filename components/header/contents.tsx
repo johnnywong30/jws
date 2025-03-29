@@ -52,7 +52,7 @@ export const DesktopContent = () => {
     <>
       <NavigationMenu>
         <NavigationMenuList className="sm:gap-2">
-          {items.map((item, i) => (
+          {items.map((item) => (
             <NavItem
               key={`side-nav${item.label}`}
               active={pathname === item.href}
