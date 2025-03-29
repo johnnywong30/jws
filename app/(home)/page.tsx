@@ -38,7 +38,7 @@ const About = () => {
         creating tools that empower users to make well-informed decisions.
       </p>
       <p>
-        Currently, I'm a{" "}
+        Currently, I&apos;m a{" "}
         <span className="font-semibold">{AboutData.companyData.role}</span> at{" "}
         <Link
           className="font-semibold text-pink-600"
@@ -54,8 +54,8 @@ const About = () => {
         I primarily have experience in start-up environments, where I have
         developed systems and applications from the ground up. I always seek to
         learn new technologies and have consistently sped up the development
-        process for both teammates and myself in several of the start-ups I've
-        worked at.
+        process for both teammates and myself in several of the start-ups
+        I&apos;ve worked at.
       </p>
       <p>
         In my spare time, I enjoy going to the gym, taking a walk on the pier or
