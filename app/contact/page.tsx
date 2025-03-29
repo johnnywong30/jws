@@ -59,7 +59,7 @@ export default function Contact() {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="space-y-6 w-full sm:w-2/3 px-4 pb-2"
+          className="space-y-6 w-full sm:w-2/3 px-4 py-6"
         >
           <section className="flex flex-row gap-8">
             <FormField
@@ -67,12 +67,14 @@ export default function Contact() {
               name="firstName"
               render={({ field }) => (
                 <FormItem className="w-full">
-                  <FormLabel>First Name</FormLabel>
+                  <FormLabel className="font-bold text-lg">
+                    First Name
+                  </FormLabel>
                   <FormControl>
                     <Input
                       placeholder="John"
                       {...field}
-                      className="shadow-md"
+                      className="shadow-md placeholder:text-slate-300 dark:placeholder:text-slate-600"
                     />
                   </FormControl>
                   <FormMessage />
@@ -84,12 +86,12 @@ export default function Contact() {
               name="lastName"
               render={({ field }) => (
                 <FormItem className="w-full">
-                  <FormLabel>Last Name</FormLabel>
+                  <FormLabel className="font-bold text-lg">Last Name</FormLabel>
                   <FormControl>
                     <Input
                       placeholder="Smith"
                       {...field}
-                      className="shadow-md"
+                      className="shadow-md placeholder:text-slate-300 dark:placeholder:text-slate-600"
                     />
                   </FormControl>
                   <FormMessage />
@@ -102,13 +104,15 @@ export default function Contact() {
             name="emailAddress"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email Address</FormLabel>
+                <FormLabel className="font-bold text-lg">
+                  Email Address
+                </FormLabel>
                 <FormControl>
                   <Input
                     type="email"
                     placeholder="johnsmith@gmail.com"
                     {...field}
-                    className="shadow-md"
+                    className="shadow-md placeholder:text-slate-300 dark:placeholder:text-slate-600"
                   />
                 </FormControl>
                 <FormMessage />
@@ -120,17 +124,14 @@ export default function Contact() {
             name="subject"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Subject</FormLabel>
+                <FormLabel className="font-bold text-lg">Subject</FormLabel>
                 <FormControl>
                   <Input
                     placeholder="New Opportunity"
                     {...field}
-                    className="shadow-md"
+                    className="shadow-md placeholder:text-slate-300 dark:placeholder:text-slate-600"
                   />
                 </FormControl>
-                <FormDescription className="px-2">
-                  Summary of Message
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -140,11 +141,11 @@ export default function Contact() {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Message</FormLabel>
+                <FormLabel className="font-bold text-lg">Message</FormLabel>
                 <FormControl>
                   <Textarea
                     placeholder="Hello! My name is John Smith and I would like to..."
-                    className="min-h-[140px] sm:min-h-[160px] shadow-md"
+                    className="min-h-[140px] sm:min-h-[160px] max-h-[350px] shadow-md placeholder:text-slate-300 dark:placeholder:text-slate-600"
                     {...field}
                   />
                 </FormControl>
@@ -178,6 +179,7 @@ export default function Contact() {
           <Button
             type="submit"
             className="w-full font-semibold"
+            variant={"secondary"}
             disabled={loading}
           >
             {loading ? <Spinner className="text-accent" /> : "Submit"}

@@ -8,4 +8,4 @@ Contacts Sending Email:
 
 Supabase Integration:
     ✔ Create Contacts table @done(25-03-16 20:21)
-    ☐ Save contact request to Supabase before sending email
+    ✔ Save contact request to Supabase before sending email @done(25-03-29 15:02)

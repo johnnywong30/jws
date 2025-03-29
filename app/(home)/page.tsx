@@ -18,7 +18,7 @@ const Intro = () => {
       </p>
       <Button
         asChild
-        variant={"outline"}
+        variant="secondary"
         className="w-1/2 font-semibold mx-auto sm:mx-0"
       >
         <Link href="/contact">Get in Touch</Link>

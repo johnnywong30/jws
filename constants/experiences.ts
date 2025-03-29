@@ -1,5 +1,7 @@
 import { Experience } from "@/typing/experiences";
 
+// TODO: throw these into Supabase
+
 const xnr: Experience = {
   id: 4,
   title: "Full Stack Software Engineer",

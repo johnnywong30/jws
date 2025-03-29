@@ -38,7 +38,7 @@ const ExperienceCard = (props: Props) => {
   }, [props]);
 
   return (
-    <Card className="w-4/5 sm:w-3/5 scale-[97.5%] hover:scale-100 transition-transform duration-300 ease-in-out transform shadow-md">
+    <Card className="w-4/5 sm:w-3/5 scale-[97.5%] hover:scale-100 transition-transform duration-300 ease-in-out transform shadow-md shadow-blue-200 dark:shadow-primary">
       <CardHeader className="grid grid-cols-1 gap-1 px-1 sm:px-6">
         <CardTitle className="text-pretty px-0 text-center sm:text-left">
           <h2>{props.experience.title}</h2>
@@ -46,12 +46,12 @@ const ExperienceCard = (props: Props) => {
         <Separator orientation="horizontal" />
         <CardDescription className="flex flex-col sm:flex-row justify-between px-2 sm:px-0 gap-1 items-center">
           <div className="flex flex-row gap-2 text-pretty">
-            <h3 className="sm:w-36">
+            <h3 className="sm:w-40">
               <a
                 href={props.experience.companyLink}
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-blue-500 dark:hover:text-blue-400 hover:underline"
+                className="hover:text-blue-500 dark:hover:text-blue-400 hover:underline font-semibold"
               >
                 {props.experience.company}
               </a>
