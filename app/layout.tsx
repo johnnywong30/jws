@@ -3,6 +3,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/footer";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { Toaster } from "@/components/ui/toaster";
+import { Analytics } from "@vercel/analytics/react";
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -43,6 +44,7 @@ export default function RootLayout({
           <SidebarProvider className="flex flex-col gap-1 justify-between">
             <Header />
             {children}
+            <Analytics />
             <Footer />
           </SidebarProvider>
           <Toaster />
